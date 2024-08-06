@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <link rel="website icon" type="png"
+    href="3.png">
+    
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <title>Group 1 Website</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div><img src="4.png" alt="LOGO" height="35%" width="35%"><img src="3.png" alt="LOGO" height="34%" width="34%"></div>
+
+      </div>
+      <div
+        class="banner"
+        style="background-image: url('1.jpg')"
+      >
+        <div
+          class="glass-wrapper"
+          data-aos="fade-right"
+          data-aos-delay="300"
+          data-aos-duration="800"
+        ></div>
+      </div>
+      <div class="hero-title">
+        <p data-aos="fade-left" data-aos-delay="500" data-aos-duration="700">
+          Discover
+        </p>
+        <p
+          class="country"
+          class="country"
+          data-aos="fade-left"
+          data-aos-delay="600"
+          data-aos-duration="700"
+        >
+          Group 1
+        </p>
+        <div
+          class="details"
+          class="details"
+          data-aos="fade-left"
+          data-aos-delay="700"
+          data-aos-duration="700"
+        >
+          Hi! We are the Group 1 of Grade 10 Students From The University of Eastern Philippines - Pedro Rebadulla Memorial Campus, Catubig, Northern Samar
+        </div>
+        <div
+          class="explore"
+          class="explore"
+          data-aos="fade-left"
+          data-aos-delay="800"
+          data-aos-duration="700" 
+        >
+          <button><a href="home.html">Explore</a></button>
+        </div>
+      </div>
+      <div class="tourist-list">
+        <ul class="place-list">
+          <li
+            class="active"
+            data-aos="fade-down"
+            data-aos-delay="750"
+            data-aos-duration="700"
+            data-img="1.jpg"
+          >
+            <div
+              class="thumbnail"
+              style="background: url('1.jpg')"
+            >
+              <div class="details">
+                <p class="province">Catubig N. Samar</p>
+                <p class="place-name">UEP-PRMC ULHS</p>
+              </div>
+            </div>
+          </li>
+          <li
+            data-img="UEP AH.jpg"
+            data-aos="fade-down"
+            data-aos-delay="750"
+            data-aos-duration="700"
+          >
+            <div
+              class="thumbnail"
+              style="background: url('UEP\ AH.jpg')"
+            >
+              <div class="details">
+                <p class="province">Catubig N. Samar</p>
+                <p class="place-name">UEP-PRMC Admin Hall</p>
+              </div>
+            </div>
+          </li>
+          <li
+            data-img="8.jpg"
+            data-aos="fade-down"
+            data-aos-delay="850"
+            data-aos-duration="700"
+          >
+            <div
+              class="thumbnail"
+              style="background: url('8.jpg')"
+            >
+              <div class="details">
+                <p class="province">Northen Samar</p>
+                <p class="place-name">Catubig</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+  <style></style>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    let places = document.querySelectorAll(".place-list li");
+    let active = "/assets/img/mayon/mayon-1.webp";
+
+    places.forEach((e) => {
+      e.addEventListener("mouseenter", (event) => {
+        places.forEach((e) => {
+          e.classList.remove("active");
+        });
+
+        event.target.classList.add("active");
+        active = event.target.getAttribute("data-img");
+        let banner = document.querySelector(".banner");
+        banner.style.backgroundImage = `url('${active}')`;
+      });
+    });
+  </script>
+</html>
